@@ -6,16 +6,12 @@ fun main() {
     fun part1(input: List<String>): Int {
         var result = 0
         for (line in input) {
-            val tempSplit = line.split(":")
-            val policy = tempSplit[0]
-            val password = tempSplit[1].trim()
-            val tempSplit1 = policy.split(" ")
-            val range = tempSplit1[0]
-            val character = tempSplit1[1]
-            val rangeSplit = range.split("-")
-            val minValue = rangeSplit[0].toInt()
-            val maxValue = rangeSplit[1].toInt()
-            if (password.count { it == character[0] } in minValue..maxValue) {
+            val splitLine = line.split(":", "-", " ")
+            val minValue = splitLine[0].toInt()
+            val maxValue = splitLine[1].toInt()
+            val character = splitLine[2][0]
+            val password = splitLine[4].trim()
+            if (password.count { it == character } in minValue..maxValue) {
                 result++
             }
         }
@@ -26,16 +22,12 @@ fun main() {
     fun part2(input: List<String>): Int {
         var result = 0
         for (line in input) {
-            val tempSplit = line.split(":")
-            val policy = tempSplit[0]
-            val password = tempSplit[1].trim()
-            val tempSplit1 = policy.split(" ")
-            val range = tempSplit1[0]
-            val character = tempSplit1[1]
-            val rangeSplit = range.split("-")
-            val minValue = rangeSplit[0].toInt()
-            val maxValue = rangeSplit[1].toInt()
-            if ((password[minValue - 1] == character[0]).xor(password[maxValue - 1] == character[0])) {
+            val splitLine = line.split(":", "-", " ")
+            val minValue = splitLine[0].toInt()
+            val maxValue = splitLine[1].toInt()
+            val character = splitLine[2][0]
+            val password = splitLine[4].trim()
+            if ((password[minValue - 1] == character).xor(password[maxValue - 1] == character)) {
                 result++
             }
         }
