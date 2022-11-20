@@ -1,6 +1,7 @@
 package day04
 
 import utils.readInput
+import kotlin.streams.toList
 
 fun main() {
     fun separatePassports(input: List<String>): List<List<String>> {
