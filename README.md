@@ -1,5 +1,3 @@
-[![Gradle CI](https://github.com/TimberBro/AoC2022/actions/workflows/gradle.yml/badge.svg)](https://github.com/TimberBro/AoC2022/actions/workflows/gradle.yml)
-
 # aoc2020
 
 Welcome to the Advent of Code[^aoc] Kotlin project created by [timberbro][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
